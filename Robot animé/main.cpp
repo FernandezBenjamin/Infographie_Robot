@@ -60,12 +60,6 @@ void initRendering() {
 	//DEFINIT LA COULEUR D'EFFACEMENT ET LA COULEUR DE FOND
 	glClearColor(0.0, 0.0, 0.0, 0.0); //NOIR
 
-	/* Activation des lumières */
-	//glEnable(GL_LIGHTING);          // Activation du mode
-	//glEnable(GL_LIGHT0);            // Activation lumière n°0
-	//glEnable(GL_LIGHT1);            // Activation lumière n°1
-	//glEnable(GL_LIGHT2);            // Activation lumière n°2
-
 	/* Les normales (crées par glNormal(*)) sont automatiquement unitaires */
 	glEnable(GL_NORMALIZE);
 
@@ -91,9 +85,9 @@ void display(void){
 	GLfloat lightColor1[] = {0.5f, 0.2f, 0.2f, 1.0f};    // Color (0.5, 0.2, 0.2)
 	GLfloat lightPos1[] = {-1.0f, 0.5f, 0.5f, 0.0f};     // Coming from the direction (-1, 0.5, 0.5)
 
-        GLfloat lightColor2[] = {0.0f, 1.0f, 0.0f, 1.0f};    // Color (0.5, 0.5, 0.5)
+    GLfloat lightColor2[] = {0.0f, 1.0f, 0.0f, 1.0f};    // Color (0.5, 0.5, 0.5)
 
-        GLfloat lightPos2[] = {-3.0, 0.0f, 0.0, 1.0f};      // Positioned at (-3, 0, 0)
+    GLfloat lightPos2[] = {-3.0, 0.0f, 0.0, 1.0f};      // Positioned at (-3, 0, 0)
 
 
 
@@ -117,16 +111,14 @@ void display(void){
 	glLoadIdentity();
 
     /** CAMERA **/
+
+    camera(); //CALCUL DE LA CAMERA
     //ON VA UNIQUEMENT CHANGER LA POSITION DE LA CAMERA
-                    //POSITION          //VISEE
-    camera();
+                //POSITION               //VISEE
 	gluLookAt(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ);
 
-	//glTranslatef(0.0f, 0.0f, -5.0f);                      // déplacement caméra
-	//glColor3f(1.0f, 1.0f, 1.0f);
 
-
-	// Ajout lumière ambiante
+	//AJOUT DE LA LUMIERE AMBIANTE
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
 
     	// Ajout lumière positionnelle L0
@@ -147,10 +139,9 @@ void display(void){
 
     robotLeg();
 
-
 	glutSwapBuffers();
 
-	/* On force l'affichage */
+	//FORCE L'AFFICHAGE
 	glFlush();
 }
 
@@ -163,20 +154,20 @@ void reshape(int w, int h){
 
 	gluPerspective(60.0, (GLfloat) w / (GLfloat) h, 1.0, 200.0);
 
-
 }
+//TRANSFORMER LES ANGLES EN RADIAN
 void setRadian(double a){
 
     double result;
     result = 180.0 / PI;
 
     a = a * result;
-    printf("\nradian : %lf", a);
 
 }
 
-
+//MOUVEMENT DE LA CAMERA
 void camera(){
+
     setRadian(alpha);
     setRadian(beta);
     eyeX = r * cos(beta) * sin(alpha);
@@ -212,6 +203,14 @@ void keyboard(unsigned char key, int x, int y) {
 				break;
             case 'q':
 				alpha -= 0.2;
+				glutPostRedisplay();
+				break;
+            case 'r':
+				r += 0.2;
+				glutPostRedisplay();
+				break;
+            case 'f':
+				r -= 0.2;
 				glutPostRedisplay();
 				break;
 
