@@ -119,6 +119,7 @@ void display(void){
     /** CAMERA **/
     //ON VA UNIQUEMENT CHANGER LA POSITION DE LA CAMERA
                     //POSITION          //VISEE
+    camera();
 	gluLookAt(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ);
 
 	//glTranslatef(0.0f, 0.0f, -5.0f);                      // déplacement caméra
@@ -198,19 +199,19 @@ void keyboard(unsigned char key, int x, int y) {
 
             //MOUVEMENT DE LA CAMERA
             case 'z':
-				eyeY += 0.3;
+				beta += 0.2;
 				glutPostRedisplay();
 				break;
             case 's':
-				eyeY -= 0.3;
+				beta -= 0.2;
 				glutPostRedisplay();
 				break;
             case 'd':
-				eyeX += 0.3;
+				alpha += 0.2;
 				glutPostRedisplay();
 				break;
             case 'q':
-				eyeX -= 0.3;
+				alpha -= 0.2;
 				glutPostRedisplay();
 				break;
 
