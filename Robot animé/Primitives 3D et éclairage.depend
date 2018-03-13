@@ -55,3 +55,31 @@
 	<stdlib.h>
 	<stdio.h>
 
+1520937836 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
+1520937831 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"header.h"
+	"functions.c"
+
+1520937811 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\header.h
+
+1520937836 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
