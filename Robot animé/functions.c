@@ -8,7 +8,7 @@
 #include <math.h>
 #include<stdlib.h>
 #include<stdio.h>
-
+#define PI 3.14159265
 void robotLeg(){
 
     //SPHERE PIVOT 1
@@ -86,8 +86,4 @@ void arm(){
         glPopMatrix();
 
 	glPopMatrix();
-}
-
-void camera(){
-
 }

@@ -21,7 +21,7 @@ PROJET D'INFOGRAPHIE - ANIMATION D'UN ROBOT EN 3D
 #include <math.h>
 #include "header.h"
 #include "functions.c"
-
+#define PI 3.14159265
 
 int main(int argc,  char **argv){
 
@@ -164,7 +164,26 @@ void reshape(int w, int h){
 
 
 }
+void setRadian(double a){
 
+    double result;
+    result = 180.0 / PI;
+
+    a = a * result;
+    printf("\nradian : %lf", a);
+
+}
+
+
+void camera(){
+    setRadian(alpha);
+    setRadian(beta);
+    eyeX = r * cos(beta) * sin(alpha);
+
+    eyeY = r * sin(beta);
+
+    eyeZ = r * cos(alpha) * cos(beta);
+}
 //FONCTION CLAVIER: COMMANDES DE LA CAMERA ET LUMIERE
 void keyboard(unsigned char key, int x, int y) {
 		switch (key){
