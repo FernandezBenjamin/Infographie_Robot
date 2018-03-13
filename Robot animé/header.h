@@ -4,6 +4,7 @@ void display(void);
 void reshape(int w,int h);
 void keyboard(unsigned char key, int x, int y);
 void robotLeg();
+void arms();
 void camera();
 void setRadian();
 
@@ -25,6 +26,10 @@ float r = 7.5;
 
 float alpha = 0.0;
 float beta = 0.0;
+
+
+
+
 
 
 

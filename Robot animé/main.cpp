@@ -23,6 +23,16 @@ PROJET D'INFOGRAPHIE - ANIMATION D'UN ROBOT EN 3D
 #include "functions.c"
 #define PI 3.14159265
 
+
+float epaule = 35.0;
+float avant_bras = 0.0;
+float coude = 0.0;
+float xcoude = 3.0;
+float ycoude = -2.0;
+
+
+
+
 int main(int argc,  char **argv){
 
 	//INITIALISATION DE GLUT ET LA CREATION DE FENETRE
@@ -139,6 +149,10 @@ void display(void){
 
     robotLeg();
 
+    arms(epaule,avant_bras,coude,xcoude,ycoude);
+
+    body();
+
 	glutSwapBuffers();
 
 	//FORCE L'AFFICHAGE
@@ -174,7 +188,7 @@ void camera(){
 
     eyeY = r * sin(beta);
 
-    eyeZ = r * cos(alpha) * cos(beta);
+    eyeZ = r * cos(alpha) * cos(beta) + 10.0;
 }
 //FONCTION CLAVIER: COMMANDES DE LA CAMERA ET LUMIERE
 void keyboard(unsigned char key, int x, int y) {
