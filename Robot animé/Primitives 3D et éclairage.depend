@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1391551518 source:c:\users\marc\desktop\marc\cours-td-ecoles\esgi\infographie\2i\enoncés tp\esgi\tp étudiants\primitives 3d et éclairage\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<stdio.h>
+
+1391551518 source:c:\users\marc\desktop\marc\cours-td-ecoles\esgi\infographie\2i\enoncés tp\esgi\tp étudiants\tp étudiants\primitives 3d et éclairage\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<stdio.h>
+
+1518522066 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\tp\tp étudiants\primitives 3d et éclairage\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<stdio.h>
+
+1520337256 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\tp\tp étudiants\bras articulé\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<stdio.h>
+
+1520932990 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\robot animé\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"header.h"
+	"functions.c"
+
+1520932823 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\robot animé\functions.c
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
+1520933043 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\robot animé\header.h
+
+1520932823 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\robot animé\functions.c
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
