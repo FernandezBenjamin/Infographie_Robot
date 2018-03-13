@@ -198,19 +198,19 @@ void keyboard(unsigned char key, int x, int y) {
 
             //MOUVEMENT DE LA CAMERA
             case 'z':
-				beta += 0.2;
+				eyeY += 0.3;
 				glutPostRedisplay();
 				break;
             case 's':
-				beta -= 0.2;
+				eyeY -= 0.3;
 				glutPostRedisplay();
 				break;
             case 'd':
-				alpha += 0.2;
+				eyeX += 0.3;
 				glutPostRedisplay();
 				break;
             case 'q':
-				alpha -= 0.2;
+				eyeX -= 0.3;
 				glutPostRedisplay();
 				break;
 
