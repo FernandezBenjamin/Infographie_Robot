@@ -123,7 +123,7 @@ void display(void){
 
     /** CAMERA **/
 
-    camera(); //CALCUL DE LA CAMERA
+    //camera(); //CALCUL DE LA CAMERA
     //ON VA UNIQUEMENT CHANGER LA POSITION DE LA CAMERA
                 //POSITION               //VISEE
 	gluLookAt(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ);
@@ -177,14 +177,14 @@ void reshape(int w, int h){
 void setRadian(double a){
 
     double result;
-    result = 180.0 / PI;
+    result = 360.0 / PI;
 
     a = a * result;
 
 }
 
 //MOUVEMENT DE LA CAMERA
-void camera(){
+void cameraPosition(){
 
     setRadian(alpha);
     setRadian(beta);
@@ -193,6 +193,49 @@ void camera(){
     eyeY = r * sin(beta);
 
     eyeZ = r * cos(alpha) * cos(beta) + 10.0;
+}
+
+void cameraVisee(){
+    //DEFINIR LA POSITION X1
+    cameraPosition();
+    centerX = (r * cos(beta) * sin(alpha)) + eyeX;
+
+    centerY = (r * sin(beta)) + eyeY;
+
+    centerZ = (r * cos(alpha) * cos(beta)) + eyeZ;
+
+
+}
+void calcul(){
+
+    //t = X1 - X0
+
+    cameraVisee();
+    t1 = centerX - eyeX;
+    t2 = centerY - eyeY;
+    t3 = centerZ - eyeZ;
+
+    //CALCUL DU LA POSITION X0
+    //X0 = X0 + t(X1 - X0)
+    eyeX = eyeX + (coef * t1);
+    eyeY = eyeY + (coef * t2);
+    eyeZ = eyeZ + (coef * t3);
+
+    /*//DEPLACEMENT DU POINT DE MIRE EN PARALLELE
+    //X1 = X1 + t(X1 - X0)
+    centerX = centerX + (coef * t1);
+    centerY = centerY + (coef * t2);
+    centerZ = centerZ + (coef * t3);*/
+
+
+    /*printf("\nx0 = %f", eyeX);
+    printf("\ny0 = %f", eyeY);
+    printf("\nz0 = %f", eyeZ);*/
+    printf("\nr = %f", r);
+    printf("\nalpha: %f beta:%f", alpha, beta);
+
+
+
 }
 //FONCTION CLAVIER: COMMANDES DE LA CAMERA ET LUMIERE
 void keyboard(unsigned char key, int x, int y) {
@@ -208,27 +251,39 @@ void keyboard(unsigned char key, int x, int y) {
 
             //MOUVEMENT DE LA CAMERA
             case 'z':
-				beta += 0.2;
+
+				beta -= 0.2;
+				calcul();
 				glutPostRedisplay();
 				break;
             case 's':
-				beta -= 0.2;
+
+				beta += 0.2;
+				calcul();
 				glutPostRedisplay();
 				break;
             case 'd':
-				alpha += 0.2;
+
+				alpha -= 0.2;
+				calcul();
 				glutPostRedisplay();
 				break;
             case 'q':
-				alpha -= 0.2;
+
+				alpha += 0.2;
+				calcul();
 				glutPostRedisplay();
 				break;
             case 'r':
-				r += 0.2;
+
+				coef -= 0.2;
+				calcul();
 				glutPostRedisplay();
 				break;
             case 'f':
-				r -= 0.2;
+
+				coef += 0.2;
+				calcul();
 				glutPostRedisplay();
 				break;
 

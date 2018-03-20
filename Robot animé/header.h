@@ -5,7 +5,11 @@ void reshape(int w,int h);
 void keyboard(unsigned char key, int x, int y);
 void robotLeg();
 void arms();
-void camera();
+
+//CAMERA
+void cameraPosition();
+void cameraVisee();
+void calcul();
 void setRadian();
 
 /** VARIABLES GLOBALES **/
@@ -22,7 +26,13 @@ float upX = 0.0;
 float upY = 1.0;
 float upZ = 0.0;
 
-float r = 7.5;
+
+float t1 = 0.0;
+float t2 = 0.0;
+float t3 = 0.0;
+
+float r = 5.0;
+float coef = 0.2; //SE DEPLACE DE 0.2: ZOOM
 
 float alpha = 0.0;
 float beta = 0.0;
