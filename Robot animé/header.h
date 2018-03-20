@@ -31,8 +31,8 @@ float t1 = 0.0;
 float t2 = 0.0;
 float t3 = 0.0;
 
-float r = 5.0;
-float coef = 0.2; //SE DEPLACE DE 0.2: ZOOM
+float r = 20.0;
+float coef = 0.0; //SE DEPLACE DE 0.2: ZOOM
 
 float alpha = 0.0;
 float beta = 0.0;

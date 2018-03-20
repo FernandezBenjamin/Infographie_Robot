@@ -221,11 +221,11 @@ void calcul(){
     eyeY = eyeY + (coef * t2);
     eyeZ = eyeZ + (coef * t3);
 
-    /*//DEPLACEMENT DU POINT DE MIRE EN PARALLELE
+    //DEPLACEMENT DU POINT DE MIRE EN PARALLELE
     //X1 = X1 + t(X1 - X0)
     centerX = centerX + (coef * t1);
     centerY = centerY + (coef * t2);
-    centerZ = centerZ + (coef * t3);*/
+    centerZ = centerZ + (coef * t3);
 
 
     /*printf("\nx0 = %f", eyeX);
@@ -276,13 +276,13 @@ void keyboard(unsigned char key, int x, int y) {
 				break;
             case 'r':
 
-				coef -= 0.2;
+				coef += 0.2;
 				calcul();
 				glutPostRedisplay();
 				break;
             case 'f':
 
-				coef += 0.2;
+				coef -= 0.2;
 				calcul();
 				glutPostRedisplay();
 				break;
