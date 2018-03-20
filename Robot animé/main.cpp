@@ -29,6 +29,7 @@ float avant_bras = 0.0;
 float coude = 0.0;
 float xcoude = 3.0;
 float ycoude = -2.0;
+float tete = 90;
 
 
 
@@ -38,7 +39,7 @@ int main(int argc,  char **argv){
 	//INITIALISATION DE GLUT ET LA CREATION DE FENETRE
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
-    glutInitWindowSize(500, 500);
+    glutInitWindowSize(600, 600);
 	glutInitWindowPosition (100, 100);
 	glutCreateWindow("Le robot animé!");
 
@@ -147,11 +148,14 @@ void display(void){
 
     //COMPOSANTS DU ROBOT
 
-    robotLeg();
+    robotLeftLeg();
+    robotRightLeg();
 
     arms(epaule,avant_bras,coude,xcoude,ycoude);
 
     body();
+
+    head(tete);
 
 	glutSwapBuffers();
 
@@ -226,6 +230,56 @@ void keyboard(unsigned char key, int x, int y) {
             case 'f':
 				r -= 0.2;
 				glutPostRedisplay();
+				break;
+
+
+            case 'l':
+				if ((avant_bras+15.0) < -45.0){
+                    avant_bras = 45.0;
+                } else if ((avant_bras+15.0) > 45.0){
+                    avant_bras = -45.0;
+                } else {
+                    avant_bras += 15.0;
+                }
+				glutPostRedisplay();
+				break;
+
+
+            case 'e':
+                if (epaule == 360.0){
+                    epaule = 0.0;
+                } else {
+                    epaule -= 30.0;
+                }
+                coude += 15.0;
+				glutPostRedisplay();
+
+				break;
+
+
+            case 'p':
+                if (epaule == 360.0){
+                    epaule = 0.0;
+                } else {
+                    epaule += 30.0;
+                }
+                coude -= 15.0;
+				glutPostRedisplay();
+
+				break;
+
+
+
+            case 'm':
+                if ((avant_bras-15.0) < -45.0){
+                    avant_bras = 30.0;
+                } else if ((avant_bras-15.0) > 45.0){
+                    avant_bras = -30.0;
+                } else {
+                    avant_bras -= 15.0;
+                }
+				glutPostRedisplay();
+
 				break;
 
 		}

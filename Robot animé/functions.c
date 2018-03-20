@@ -15,21 +15,18 @@
 
 
 
-
-
-
-
-void robotLeg(){
-
+void robotLeftLeg(){
+//robotLeg devient LeftLeg
     //SPHERE PIVOT 1
     glPushMatrix();
         glPushMatrix();
-            glTranslatef(0.0f, 0.0f, 0.0f);
+            glTranslatef(4.0f, -5.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, 0.0f);
             glutSolidSphere(0.7, 20.0, 20.0);
         glPopMatrix();
         glPushMatrix();
-            glTranslatef(0.0f, 0.0f, 0.0f);
-            glTranslatef(0.0f, -1.0f, 0.0f);
+            glTranslatef(4.0f, -7.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, 0.0f);
             glPushMatrix();
                 glScalef(1.0, 2.5, 0.7);
                 glutSolidCube(1.0);
@@ -38,15 +35,56 @@ void robotLeg(){
 
         //PIED
         glPushMatrix();
-            glTranslatef(0.0f, -2.5f, 0.0f);
+            glTranslatef(4.0f, -8.5f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, 0.0f);
             glPushMatrix();
-                glScalef(3.5, 0.4, 2.0);
+                glScalef(2.0, 0.4, 3.5);
                 glutSolidCube(1.0);
             glPopMatrix();
 
         glPopMatrix();
     glPopMatrix();
 }
+
+void robotRightLeg(){
+//robotLeg devient LeftLeg
+    //SPHERE PIVOT 1
+    glPushMatrix();
+        glPushMatrix();
+            glTranslatef(-0.0f, -5.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glutSolidSphere(0.7, 20.0, 20.0);
+        glPopMatrix();
+        glPushMatrix();
+            glTranslatef(-0.0f, -7.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glPushMatrix();
+                glScalef(1.0, 2.5, 0.7);
+                glutSolidCube(1.0);
+            glPopMatrix();
+        glPopMatrix();
+
+        //PIED
+        glPushMatrix();
+            glTranslatef(-0.0f, -8.5f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glPushMatrix();
+                glScalef(2.0, 0.4, 3.5);
+                glutSolidCube(1.0);
+            glPopMatrix();
+
+        glPopMatrix();
+    glPopMatrix();
+}
+
+
+
+
+
+
+
+
+
 void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoude){
 
 
@@ -156,13 +194,13 @@ void body(){
 
         /* Tete */
 		glRotatef(180.0,0.0f,1.0f,0.0f);
-		glTranslatef(0.0f, 0.0f, 2.0f);
+		glTranslatef(0.0f, 0.0f, 1.0f);
 		glRotatef(90.0,0.0f,1.0f,0.0f);
 		glutSolidSphere(3.4, 12.0, 12.0);
 
         /* Base 1 */
         glPushMatrix();
-            glTranslatef(0.0f, 2.0f, 0.0f);
+            glTranslatef(-1.0f, 2.0f, 0.0f);
             glRotatef(0.0,0.0,0.0,1.0f);
             glTranslatef(1.0f, -2.0f, 0.0f);
             glRotatef(90, 1, 0, 0);
@@ -174,7 +212,7 @@ void body(){
 
         /* Base 2 */
         glPushMatrix();
-            glTranslatef(0.0f, 0.0f, 0.0f);
+            glTranslatef(-1.0f, 0.0f, 0.0f);
             glRotatef(0.0,0.0,0.0,1.0f);
             glTranslatef(1.0f, -3.5f, 0.0f);
             glRotatef(90, 1, 0, 0);
@@ -184,5 +222,25 @@ void body(){
             gluCylinder(base2, 3.4, 3.4, 3, 30, 30);
         glPopMatrix();
 
-	glPopMatrix();}
+	glPopMatrix();
 
+}
+
+
+
+
+void head(float angle){
+
+
+    glPushMatrix();
+
+        /* Tete */
+		glRotatef(180.0,0.0f,1.0f,0.0f);
+		glTranslatef(0.0f, 1.0f, -1.0f);
+		glRotatef(angle,0.0f,1.0f,0.0f);
+		glutSolidSphere(2.5, 12.0, 12.0);
+
+
+
+	glPopMatrix();
+}
