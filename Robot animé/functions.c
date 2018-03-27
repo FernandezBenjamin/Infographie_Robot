@@ -76,7 +76,7 @@ void robotRightLeg(){
 
 
 
-void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoude){
+void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoude, float xpoigne, float ypoigne){
 
 
     /* Epaule */
@@ -85,6 +85,7 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
 		glTranslatef(4.0f, 0.0f, 0.0f);
 		glRotatef(90.0,0.0f,1.0f,0.0f);
 		glutSolidSphere(0.8, 12.0, 12.0);
+
 
 
         /* Coude */
@@ -117,7 +118,19 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
             GLUquadricObj *obj2 = gluNewQuadric();
             gluCylinder(obj2, 0.8, 0.5, 3.2, 30, 30);
         glPopMatrix();
-        hand(xcoude, ycoude, -avant_bras, coude);
+
+
+        /* Poigne */
+        glPushMatrix();
+            glRotatef(coude,0.0,0.0,1.0f);
+            glTranslatef(xpoigne, ypoigne, 0.0f);
+            glRotatef(avant_bras,0.0,0.0,1.0f);
+            glutSolidSphere(0.5, 12.0, 12.0);
+            hand(xpoigne, ypoigne, -avant_bras, coude);
+        glPopMatrix();
+
+
+
 
 
 
@@ -164,13 +177,23 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
             GLUquadricObj *obj4 = gluNewQuadric();
             gluCylinder(obj4, 0.8, 0.5, 3.2, 30, 30);
         glPopMatrix();
-        hand(xcoude, ycoude, -avant_bras, coude);
+
+
+                /* Poigne */
+        glPushMatrix();
+            glRotatef(coude,0.0,0.0,1.0f);
+            glTranslatef(xpoigne, ypoigne, 0.0f);
+            glRotatef(avant_bras,0.0,0.0,1.0f);
+            glutSolidSphere(0.5, 12.0, 12.0);
+        glPopMatrix();
+        hand(xpoigne, ypoigne, -avant_bras, coude);
 
 	glPopMatrix();
 
 
 
 }
+
 
 
 
@@ -187,12 +210,18 @@ void hand(float xcoude, float ycoude, float rotation, float rotation2){
             glScaled(0.7, 0.2, 0.5);
             glutSolidCube(2.0);
         glPopMatrix();
-        finger(0.3);
-        finger(-0.7);
+        glPushMatrix();
+            finger(0.3);
+        glPopMatrix();
+        glPushMatrix();
+            finger(-0.3);
+        glPopMatrix();
 
     glPopMatrix();
 
 }
+
+
 void finger(float zPosition){
     //CREATION DE DEUX DOIGTS IDENTIQUES A POSITION Z DIFFERENTES
 

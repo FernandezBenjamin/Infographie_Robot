@@ -55,7 +55,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1522140449 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
+1522110474 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -63,7 +63,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1522139334 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\main.cpp
+1522103233 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\main.cpp
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -73,9 +73,9 @@
 	"header.h"
 	"functions.c"
 
-1522140339 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\header.h
+1522110431 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\header.h
 
-1522140449 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
+1522110564 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -112,4 +112,32 @@
 	<stdio.h>
 
 1521536155 c:\users\benjamin\documents\github\infographie_robot\robot animé\functions.h
+
+1522141284 source:c:\users\benjamin\documents\robot animé\functions.c
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
+1522141218 source:c:\users\benjamin\documents\robot animé\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"header.h"
+	"functions.c"
+
+1522141369 c:\users\benjamin\documents\robot animé\header.h
+
+1522141816 c:\users\benjamin\documents\robot animé\functions.c
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
 

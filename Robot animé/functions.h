@@ -9,6 +9,8 @@ void body();
 void head(float angle);
 void robotLeftLeg();
 void robotRightLeg();
+void finger(float zPosition);
+void hand(float xcoude, float ycoude, float rotation, float rotation2);
 
 
 

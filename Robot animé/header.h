@@ -58,3 +58,8 @@ void mouseWheel(int button, int dir, int x, int y){
         coef = coef + 0.2;
     }
 }
+
+
+
+
+
