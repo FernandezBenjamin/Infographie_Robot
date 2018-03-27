@@ -41,7 +41,7 @@ int main(int argc,  char **argv){
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(600, 600);
 	glutInitWindowPosition (100, 100);
-	glutCreateWindow("Le robot animé!");
+	glutCreateWindow("Le robot animï¿½!");
 
 	//INITIALISATION D'OPENGL
 	initRendering();
@@ -73,7 +73,7 @@ void initRendering() {
 	//DEFINIT LA COULEUR D'EFFACEMENT ET LA COULEUR DE FOND
 	glClearColor(0.0, 0.0, 0.0, 0.0); //NOIR
 
-	/* Les normales (crées par glNormal(*)) sont automatiquement unitaires */
+	/* Les normales (crï¿½es par glNormal(*)) sont automatiquement unitaires */
 	glEnable(GL_NORMALIZE);
 
 
@@ -100,7 +100,7 @@ void drawAxes(){
 //CREATION DE LA SCENE AVEC LAMPES
 void display(void){
 
-	/* Déclaration des couleurs et positions des lampes */
+	/* Dï¿½claration des couleurs et positions des lampes */
 	GLfloat ambientColor[] = {0.2f, 0.2f, 0.2f, 1.0f};   // Color (0.2, 0.2, 0.2)
 
 	GLfloat lightColor0[] = {0.5f, 0.5f, 0.5f, 1.0f};    // Color (0.5, 0.5, 0.5)
@@ -115,7 +115,7 @@ void display(void){
 
 
 
-	/* Déclaration des différents types de matière des sphères */
+	/* Dï¿½claration des diffï¿½rents types de matiï¿½re des sphï¿½res */
 	GLfloat no_mat[] = {0.0, 0.0, 0.0, 1.0};
 	GLfloat mat_ambient_color[] = {0.8, 0.8, 0.2, 1.0};
 	GLfloat mat_diffuse[] = {0.1, 0.5, 0.8, 1.0};
@@ -145,13 +145,13 @@ void display(void){
 	//AJOUT DE LA LUMIERE AMBIANTE
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
 
-    	// Ajout lumière positionnelle L0
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0);        // lumière diffuse
+    	// Ajout lumiï¿½re positionnelle L0
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0);        // lumiï¿½re diffuse
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPos0);         // position
 
-	// Ajout lumière positionnelle L1
+	// Ajout lumiï¿½re positionnelle L1
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, lightColor1);
-	glLightfv(GL_LIGHT1, GL_SPECULAR, lightColor1);       // lumiére spéculaire
+	glLightfv(GL_LIGHT1, GL_SPECULAR, lightColor1);       // lumiï¿½re spï¿½culaire
 	glLightfv(GL_LIGHT1, GL_POSITION, lightPos1);
 
     /*glRotatef(a, 1.0, 0.0, 0.0);
@@ -161,16 +161,16 @@ void display(void){
 
     //COMPOSANTS DU ROBOT
 
-    /*robotLeftLeg();
+    robotLeftLeg();
     robotRightLeg();
 
     arms(epaule,avant_bras,coude,xcoude,ycoude);
 
     body();
 
-    head(tete);*/
+    head(tete);
 
-    hand();
+    //hand();
 
 	glutSwapBuffers();
 

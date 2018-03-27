@@ -87,7 +87,6 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
 		glutSolidSphere(0.8, 12.0, 12.0);
 
 
-
         /* Coude */
         glPushMatrix();
             glRotatef(coude,0.0,0.0,1.0f);
@@ -118,7 +117,7 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
             GLUquadricObj *obj2 = gluNewQuadric();
             gluCylinder(obj2, 0.8, 0.5, 3.2, 30, 30);
         glPopMatrix();
-
+        hand(xcoude, ycoude, -avant_bras, coude);
 
 
 
@@ -165,6 +164,7 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
             GLUquadricObj *obj4 = gluNewQuadric();
             gluCylinder(obj4, 0.8, 0.5, 3.2, 30, 30);
         glPopMatrix();
+        hand(xcoude, ycoude, -avant_bras, coude);
 
 	glPopMatrix();
 
@@ -174,12 +174,14 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
 
 
 
-void hand(){
+void hand(float xcoude, float ycoude, float rotation, float rotation2){
 
     //MAIN
 
     glPushMatrix();
-        glTranslatef(0.0f, 0.0f, 0.0f);
+        glRotatef(rotation,0.0,0.0,1.0f);
+        glTranslatef(xcoude, ycoude, 0.0f);
+        glRotatef(rotation2,0.0,0.0,1.0f);
         glPushMatrix();
             //PAUME
             glScaled(0.7, 0.2, 0.5);

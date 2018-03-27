@@ -8,7 +8,7 @@ void mouseWheel(int , int, int, int);
 //COMPOSANTS DU ROBOT
 void robotLeg();
 void arms();
-void hand();
+void hand(float xcoude, float ycoude, float rotation, float rotation2);
 void finger(float zPosition);
 //CAMERA
 void cameraPosition();
@@ -37,7 +37,7 @@ float t1 = 0.0;
 float t2 = 0.0;
 float t3 = 0.0;
 
-float r = 20.0;
+float r = -20.0;
 float coef = -2.0; //ZOOM DE LA CAMERA
 
 //ANGLES DE LA CAMERA
@@ -58,8 +58,3 @@ void mouseWheel(int button, int dir, int x, int y){
         coef = coef + 0.2;
     }
 }
-
-
-
-
-
