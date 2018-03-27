@@ -12,9 +12,6 @@
 #define PI 3.14159265
 
 
-
-
-
 void robotLeftLeg(){
 //robotLeg devient LeftLeg
     //SPHERE PIVOT 1
@@ -79,12 +76,6 @@ void robotRightLeg(){
 
 
 
-
-
-
-
-
-
 void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoude){
 
 
@@ -128,12 +119,10 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
             gluCylinder(obj2, 0.8, 0.5, 3.2, 30, 30);
         glPopMatrix();
 
+
+
+
 	glPopMatrix();
-
-
-
-
-
 
 
 	/* Bras Droit */
@@ -185,7 +174,53 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
 
 
 
+void hand(){
 
+    //MAIN
+
+    glPushMatrix();
+        glTranslatef(0.0f, 0.0f, 0.0f);
+        glPushMatrix();
+            //PAUME
+            glScaled(0.7, 0.2, 0.5);
+            glutSolidCube(2.0);
+        glPopMatrix();
+        finger(0.3);
+        finger(-0.7);
+
+    glPopMatrix();
+
+}
+void finger(float zPosition){
+    //CREATION DE DEUX DOIGTS IDENTIQUES A POSITION Z DIFFERENTES
+
+    glTranslatef(0.7f, 0.0f, zPosition);
+    glPushMatrix();
+        //JOINT ENTRE LA PAUME ET LE DOIGT 1.1
+        glutSolidSphere(0.2, 12.0, 12.0);
+    glPopMatrix();
+    glTranslatef(0.35f, 0.0f, 0.0f);
+    glPushMatrix();
+        //DOIGT 1.1
+        glScaled(0.4, 0.2, 0.2);
+        glutSolidCube(1.5);
+
+    glPopMatrix();
+    glTranslatef(0.2f, 0.0f, 0.0f);
+    glPushMatrix();
+        //JOINT LE DOIGT 1.1: AVANCE DE 0.75 EN X
+        glutSolidSphere(0.2, 12.0, 12.0);
+    glPopMatrix();
+    glTranslatef(0.2f, 0.0f, 0.0f);
+    glPushMatrix();
+        //DOIGT 1.2
+        glScaled(0.4, 0.2, 0.2);
+        glutSolidCube(1.5);
+    glPopMatrix();
+
+
+
+}
 
 void body(){
 

@@ -14,6 +14,7 @@ PROJET D'INFOGRAPHIE - ANIMATION D'UN ROBOT EN 3D
 #include <GLUT/glut.h>
 #else
 #include <GL/glut.h>
+
 #endif
 
 #include<stdlib.h>
@@ -33,7 +34,6 @@ float tete = 90;
 
 
 
-
 int main(int argc,  char **argv){
 
 	//INITIALISATION DE GLUT ET LA CREATION DE FENETRE
@@ -50,6 +50,8 @@ int main(int argc,  char **argv){
     glutDisplayFunc(display); //AFFICHAGE DES OBJETS
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);
+	//glutMouseWheelFunc(mouseWheel);
+	glutMouseFunc(mouseWheel);
 
 
 
@@ -82,9 +84,20 @@ void initRendering() {
 	glPointSize(2.0);
 
 }
+//DESSINE LE REPERE X, Y, Z
+void drawAxes(){
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glBegin(GL_LINES);
+      glVertex2i(0,0);glVertex2i(0,50);
+      glVertex2i(0,0);glVertex2i(50,0);
+      glVertex2i(0,0);glVertex3i(0,0,50);
+    glEnd();
+    glutSwapBuffers();
+    glutPostRedisplay();
+}
 
-
-/* Création de la scène avec lampes */
+//CREATION DE LA SCENE AVEC LAMPES
 void display(void){
 
 	/* Déclaration des couleurs et positions des lampes */
@@ -127,7 +140,7 @@ void display(void){
     //ON VA UNIQUEMENT CHANGER LA POSITION DE LA CAMERA
                 //POSITION               //VISEE
 	gluLookAt(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ);
-
+    drawAxes();
 
 	//AJOUT DE LA LUMIERE AMBIANTE
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
@@ -148,14 +161,16 @@ void display(void){
 
     //COMPOSANTS DU ROBOT
 
-    robotLeftLeg();
+    /*robotLeftLeg();
     robotRightLeg();
 
     arms(epaule,avant_bras,coude,xcoude,ycoude);
 
     body();
 
-    head(tete);
+    head(tete);*/
+
+    hand();
 
 	glutSwapBuffers();
 
@@ -174,9 +189,9 @@ void reshape(int w, int h){
 
 }
 //TRANSFORMER LES ANGLES EN RADIAN
-void setRadian(double a){
+void setRadian(float a){
 
-    double result;
+    float result;
     result = 360.0 / PI;
 
     a = a * result;
@@ -184,6 +199,7 @@ void setRadian(double a){
 }
 
 //MOUVEMENT DE LA CAMERA
+//CALCUL DE LA POSITION : CAMERA CENTREE
 void cameraPosition(){
 
     setRadian(alpha);
@@ -192,9 +208,9 @@ void cameraPosition(){
 
     eyeY = r * sin(beta);
 
-    eyeZ = r * cos(alpha) * cos(beta) + 10.0;
+    eyeZ = r * cos(alpha) * cos(beta);
 }
-
+//CALCUL DE LA VISEE : CAMERA LIBRE
 void cameraVisee(){
     //DEFINIR LA POSITION X1
     cameraPosition();
@@ -206,6 +222,7 @@ void cameraVisee(){
 
 
 }
+//REDEFINITION DE LA POSITION ET DE LA VISEE : FINALISATION DE LA CAMERA LIBRE
 void calcul(){
 
     //t = X1 - X0
@@ -230,9 +247,10 @@ void calcul(){
 
     /*printf("\nx0 = %f", eyeX);
     printf("\ny0 = %f", eyeY);
-    printf("\nz0 = %f", eyeZ);*/
+    printf("\nz0 = %f", eyeZ);
     printf("\nr = %f", r);
-    printf("\nalpha: %f beta:%f", alpha, beta);
+    printf("\nr = %f", coef);
+    printf("\nalpha: %f beta:%f", alpha, beta);*/
 
 
 
@@ -240,6 +258,14 @@ void calcul(){
 //FONCTION CLAVIER: COMMANDES DE LA CAMERA ET LUMIERE
 void keyboard(unsigned char key, int x, int y) {
 		switch (key){
+            case 'w':
+                optionCamera = 1;
+                printf("\nCamera centree");
+                break;
+            case 'x':
+                optionCamera = 0;
+                printf("\nCamera libre");
+                break;
 
 			case 'a':
 				glEnable(GL_LIGHTING);
@@ -253,37 +279,62 @@ void keyboard(unsigned char key, int x, int y) {
             case 'z':
 
 				beta -= 0.2;
-				calcul();
+
+				if(optionCamera == 1){
+                    cameraPosition();
+				}else{
+                    calcul();
+				}
 				glutPostRedisplay();
 				break;
             case 's':
 
 				beta += 0.2;
-				calcul();
+				if(optionCamera == 1){
+                    cameraPosition();
+				}else{
+                    calcul();
+				}
 				glutPostRedisplay();
 				break;
             case 'd':
 
 				alpha -= 0.2;
-				calcul();
+				if(optionCamera == 1){
+                    cameraPosition();
+				}else{
+                    calcul();
+				}
 				glutPostRedisplay();
 				break;
             case 'q':
 
 				alpha += 0.2;
-				calcul();
+				if(optionCamera == 1){
+                    cameraPosition();
+				}else{
+                    calcul();
+				}
 				glutPostRedisplay();
 				break;
             case 'r':
 
 				coef += 0.2;
-				calcul();
+				if(optionCamera == 1){
+                    cameraPosition();
+				}else{
+                    calcul();
+				}
 				glutPostRedisplay();
 				break;
             case 'f':
 
 				coef -= 0.2;
-				calcul();
+				if(optionCamera == 1){
+                    cameraPosition();
+				}else{
+                    calcul();
+				}
 				glutPostRedisplay();
 				break;
 

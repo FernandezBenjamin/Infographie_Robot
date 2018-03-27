@@ -1,16 +1,22 @@
 /** PROTOTYPES DE FONCTIONS **/
 void initRendering();
+void drawAxes();
 void display(void);
 void reshape(int w,int h);
 void keyboard(unsigned char key, int x, int y);
+void mouseWheel(int , int, int, int);
+//COMPOSANTS DU ROBOT
 void robotLeg();
 void arms();
-
+void hand();
+void finger(float zPosition);
 //CAMERA
 void cameraPosition();
 void cameraVisee();
 void calcul();
 void setRadian();
+
+
 
 /** VARIABLES GLOBALES **/
 //FONCTION GLULOOKAT
@@ -32,12 +38,26 @@ float t2 = 0.0;
 float t3 = 0.0;
 
 float r = 20.0;
-float coef = 0.0; //SE DEPLACE DE 0.2: ZOOM
+float coef = -2.0; //ZOOM DE LA CAMERA
 
+//ANGLES DE LA CAMERA
 float alpha = 0.0;
 float beta = 0.0;
 
+int optionCamera = 0;   //SI 0, CAMERA LIBRE PAR DEFAUT
+                        //SI 1, CAMERA CENTREE
 
+void mouseWheel(int button, int dir, int x, int y){
+
+    if(button == 3){ //SCROLL UP
+        printf("ok");
+        coef = coef + 0.2;
+    }
+    if(button == 4){ //SCROLL DOWN
+        printf("ok");
+        coef = coef + 0.2;
+    }
+}
 
 
 
