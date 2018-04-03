@@ -43,7 +43,7 @@ int main(int argc,  char **argv){
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(600, 600);
 	glutInitWindowPosition (100, 100);
-	glutCreateWindow("Le robot animé!");
+	glutCreateWindow("Pascal le robot");
 
 	//INITIALISATION D'OPENGL
 	initRendering();
@@ -160,10 +160,6 @@ void display(void){
 	glLightfv(GL_LIGHT1, GL_SPECULAR, lightColor1);       // lumiére spéculaire
 	glLightfv(GL_LIGHT1, GL_POSITION, lightPos1);
 
-    /*glRotatef(a, 1.0, 0.0, 0.0);
-    glRotatef(b, 0.0, 1.0, 0.0);
-    glRotatef(c, 0.0, 0.0, 1.0);
-    glTranslatef(a, b, c);*/ //     /!\
 
     //COMPOSANTS DU ROBOT
 
@@ -251,26 +247,18 @@ void calcul(){
     centerZ = centerZ + (coef * t3);
 
 
-    /*printf("\nx0 = %f", eyeX);
-    printf("\ny0 = %f", eyeY);
-    printf("\nz0 = %f", eyeZ);
-    printf("\nr = %f", r);
-    printf("\nr = %f", coef);
-    printf("\nalpha: %f beta:%f", alpha, beta);*/
-
-
-
 }
 //FONCTION CLAVIER: COMMANDES DE LA CAMERA ET LUMIERE
 void keyboard(unsigned char key, int x, int y) {
+
 		switch (key){
             case 'w':
                 optionCamera = 1;
-                printf("\nCamera centree");
+                printf("\nCamera libre");
                 break;
             case 'x':
                 optionCamera = 0;
-                printf("\nCamera libre");
+                printf("\nCamera centrée");
                 break;
 
 			case 'a':
@@ -281,6 +269,7 @@ void keyboard(unsigned char key, int x, int y) {
             case 'z':
 
 				beta -= 0.2;
+				r -= 0.2;
 
 				if(optionCamera == 1){
                     cameraPosition();
@@ -292,6 +281,7 @@ void keyboard(unsigned char key, int x, int y) {
             case 's':
 
 				beta += 0.2;
+				r += 0.2;
 				if(optionCamera == 1){
                     cameraPosition();
 				}else{

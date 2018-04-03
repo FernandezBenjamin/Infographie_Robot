@@ -18,12 +18,12 @@ void robotLeftLeg(){
     glPushMatrix();
         glPushMatrix();
             glTranslatef(4.0f, -5.0f, 0.0f);
-            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, -1.0f);
             glutSolidSphere(0.7, 20.0, 20.0);
         glPopMatrix();
         glPushMatrix();
             glTranslatef(4.0f, -7.0f, 0.0f);
-            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, -1.0f);
             glPushMatrix();
                 glScalef(1.0, 2.5, 0.7);
                 glutSolidCube(1.0);
@@ -33,7 +33,7 @@ void robotLeftLeg(){
         //PIED
         glPushMatrix();
             glTranslatef(4.0f, -8.5f, 0.0f);
-            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, -1.0f);
             glPushMatrix();
                 glScalef(2.0, 0.4, 3.5);
                 glutSolidCube(1.0);
@@ -49,12 +49,12 @@ void robotRightLeg(){
     glPushMatrix();
         glPushMatrix();
             glTranslatef(-0.0f, -5.0f, 0.0f);
-            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, -1.0f);
             glutSolidSphere(0.7, 20.0, 20.0);
         glPopMatrix();
         glPushMatrix();
             glTranslatef(-0.0f, -7.0f, 0.0f);
-            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, -1.0f);
             glPushMatrix();
                 glScalef(1.0, 2.5, 0.7);
                 glutSolidCube(1.0);
@@ -64,7 +64,7 @@ void robotRightLeg(){
         //PIED
         glPushMatrix();
             glTranslatef(-0.0f, -8.5f, 0.0f);
-            glTranslatef(-2.0f, -1.0f, 0.0f);
+            glTranslatef(-2.0f, -1.0f, -1.0f);
             glPushMatrix();
                 glScalef(2.0, 0.4, 3.5);
                 glutSolidCube(1.0);
@@ -85,8 +85,6 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
 		glTranslatef(4.0f, 0.0f, 0.0f);
 		glRotatef(90.0,0.0f,1.0f,0.0f);
 		glutSolidSphere(0.8, 12.0, 12.0);
-
-
 
         /* Coude */
         glPushMatrix();
@@ -124,14 +122,30 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
         glPushMatrix();
             glRotatef(coude,0.0,0.0,1.0f);
             glTranslatef(xpoigne, ypoigne, 0.0f);
-            glRotatef(avant_bras,0.0,0.0,1.0f);
+            //glRotatef(90, 0, 1, 0);
+            glRotatef(avant_bras, 1, 0, 0);
             glutSolidSphere(0.5, 12.0, 12.0);
-            hand(xpoigne, ypoigne, -avant_bras, coude);
+
         glPopMatrix();
+       //MAIN
+        glPushMatrix();
+            glRotatef(coude,0.0,0.0,1.0f);
+            glTranslatef(xpoigne, ypoigne, 0.0f);
+            glRotatef(avant_bras,1.0,0.0,0.0f);
 
+            glPushMatrix();
+                //PAUME
+                glScaled(0.7, 0.2, 0.5);
+                glutSolidCube(2.0);
+            glPopMatrix();
+            glPushMatrix();
+                finger(0.3);
+            glPopMatrix();
+            glPushMatrix();
+                finger(-0.3);
+            glPopMatrix();
 
-
-
+        glPopMatrix();
 
 
 	glPopMatrix();
@@ -168,6 +182,7 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
 
 
         /* Avant bras */
+
         glPushMatrix();
             glRotatef(coude,0.0,0.0,1.0f);
             glTranslatef(xcoude, ycoude, 0.0f);
@@ -178,15 +193,33 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
             gluCylinder(obj4, 0.8, 0.5, 3.2, 30, 30);
         glPopMatrix();
 
-
-                /* Poigne */
+        /* Poigne */
         glPushMatrix();
             glRotatef(coude,0.0,0.0,1.0f);
             glTranslatef(xpoigne, ypoigne, 0.0f);
-            glRotatef(avant_bras,0.0,0.0,1.0f);
+            glRotatef(avant_bras,1.0,0.0,0.0f);
             glutSolidSphere(0.5, 12.0, 12.0);
         glPopMatrix();
-        hand(xpoigne, ypoigne, -avant_bras, coude);
+        //MAIN
+        glPushMatrix();
+            glRotatef(coude,0.0,0.0,1.0f);
+            glTranslatef(xpoigne, ypoigne, 0.0f);
+            glRotatef(avant_bras,1.0,0.0,0.0f);
+
+            glPushMatrix();
+                //PAUME
+                glScaled(0.7, 0.2, 0.5);
+                glutSolidCube(2.0);
+            glPopMatrix();
+            glPushMatrix();
+                finger(0.3);
+            glPopMatrix();
+            glPushMatrix();
+                finger(-0.3);
+            glPopMatrix();
+
+        glPopMatrix();
+        //hand(xpoigne, ypoigne, epaule, coude, -avant_bras);
 
 	glPopMatrix();
 
@@ -195,16 +228,17 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
 }
 
 
-
-
-void hand(float xcoude, float ycoude, float rotation, float rotation2){
+void hand(float xcoude, float ycoude, float rotation, float rotation2, float rotation3){
 
     //MAIN
 
     glPushMatrix();
-        glRotatef(rotation,0.0,0.0,1.0f);
+
         glTranslatef(xcoude, ycoude, 0.0f);
+        glRotatef(rotation,0.0,0.0,1.0f);
         glRotatef(rotation2,0.0,0.0,1.0f);
+        glRotatef(rotation3,0.0,0.0,1.0f);
+
         glPushMatrix();
             //PAUME
             glScaled(0.7, 0.2, 0.5);
