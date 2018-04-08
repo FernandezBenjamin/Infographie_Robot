@@ -55,7 +55,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1522149928 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
+1522110474 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -63,27 +63,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1522746946 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\main.cpp
-	<windows.h>
-	<GLUT/glut.h>
-	<GL/glut.h>
-	<stdlib.h>
-	<stdio.h>
-	<math.h>
-	"header.h"
-	"functions.c"
-
-1522150396 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\header.h
-
-1522747881 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
-	<windows.h>
-	<GLUT/glut.h>
-	<GL/glut.h>
-	<math.h>
-	<stdlib.h>
-	<stdio.h>
-
-1521538633 source:c:\users\benjamin\documents\github\infographie_robot\robot animé\main.cpp
+1522103233 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\main.cpp
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -93,9 +73,9 @@
 	"header.h"
 	"functions.c"
 
-1520941923 c:\users\benjamin\documents\github\infographie_robot\robot animé\header.h
+1522110431 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\header.h
 
-1521538563 c:\users\benjamin\documents\github\infographie_robot\robot animé\functions.c
+1522110564 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -103,7 +83,27 @@
 	<stdlib.h>
 	<stdio.h>
 
-1521538563 source:c:\users\benjamin\documents\github\infographie_robot\robot animé\functions.c
+1522754757 source:c:\users\benjamin\documents\github\infographie_robot\robot animé\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"header.h"
+	"Robot.h"
+
+1522141369 c:\users\benjamin\documents\github\infographie_robot\robot animé\header.h
+
+1522141842 c:\users\benjamin\documents\github\infographie_robot\robot animé\functions.c
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
+1522749964 source:c:\users\benjamin\documents\github\infographie_robot\robot animé\functions.c
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -140,4 +140,8 @@
 	<math.h>
 	<stdlib.h>
 	<stdio.h>
+
+1522755191 c:\users\benjamin\documents\github\infographie_robot\robot animé\robot.h
+	<GL/gl.h>
+	<GL/glu.h>
 

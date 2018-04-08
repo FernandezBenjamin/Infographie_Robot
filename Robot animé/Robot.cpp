@@ -8,11 +8,23 @@
 #include <math.h>
 #include<stdlib.h>
 #include<stdio.h>
+#include "Robot.h"
 
 #define PI 3.14159265
 
+Robot::Robot(float epaule, float avant_bras, float coude, float xcoude, float ycoude, float xpoigne, float ypoigne, float angle){
+    this->epaule = epaule;
+    this->avant_bras = avant_bras;
+    this->coude = coude;
+    this->xcoude = xcoude;
+    this->ycoude = ycoude;
+    this->xpoigne = xpoigne;
+    this->ypoigne = ypoigne;
+    this->angle = angle;
+}
 
-void robotLeftLeg(){
+
+void Robot::robotLeftLeg(){
 //robotLeg devient LeftLeg
     //SPHERE PIVOT 1
     glPushMatrix();
@@ -44,7 +56,7 @@ void robotLeftLeg(){
 }
 
 
-void robotRightLeg(){
+void Robot::robotRightLeg(){
 //robotLeg devient LeftLeg
     //SPHERE PIVOT 1
     glPushMatrix();
@@ -76,7 +88,7 @@ void robotRightLeg(){
 }
 
 
-void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoude, float xpoigne, float ypoigne){
+void Robot::arms(){
 
 
     /* Epaule */
@@ -126,7 +138,6 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
             glTranslatef(xpoigne, ypoigne, 0.0f);
             glRotatef(avant_bras,0.0,0.0,1.0f);
             glutSolidSphere(0.5, 12.0, 12.0);
-            hand(xpoigne, ypoigne, -avant_bras, coude);
         glPopMatrix();
 
 
@@ -186,7 +197,6 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
             glRotatef(avant_bras,0.0,0.0,1.0f);
             glutSolidSphere(0.5, 12.0, 12.0);
         glPopMatrix();
-        hand(xpoigne, ypoigne, -avant_bras, coude);
 
 	glPopMatrix();
 
@@ -195,7 +205,7 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
 }
 
 
-void hand(float xcoude, float ycoude, float rotation, float rotation2){
+void Robot::hand(float xcoude, float ycoude, float rotation, float rotation2){
 
     //MAIN
 
@@ -220,7 +230,7 @@ void hand(float xcoude, float ycoude, float rotation, float rotation2){
 }
 
 
-void finger(float zPosition){
+void Robot::finger(float zPosition){
     //CREATION DE DEUX DOIGTS IDENTIQUES A POSITION Z DIFFERENTES
 
     glTranslatef(0.7f, 0.0f, zPosition);
@@ -252,7 +262,7 @@ void finger(float zPosition){
 }
 
 
-void body(){
+void Robot::body(){
 
 /* Corps */
 	glPushMatrix();
@@ -292,7 +302,7 @@ void body(){
 }
 
 
-void head(float angle){
+void Robot::head(){
 
 
     glPushMatrix();

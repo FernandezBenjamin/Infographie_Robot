@@ -8,7 +8,7 @@ void mouseWheel(int , int, int, int);
 //COMPOSANTS DU ROBOT
 void robotLeg();
 void arms();
-void hand(float xcoude, float ycoude, float rotation, float rotation2, float rotation3);
+void hand(float xcoude, float ycoude, float rotation, float rotation2);
 void finger(float zPosition);
 //CAMERA
 void cameraPosition();
