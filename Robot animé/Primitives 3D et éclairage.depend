@@ -55,7 +55,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1522110474 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
+1523201849 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -63,7 +63,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1522103233 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\main.cpp
+1523350614 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\main.cpp
 	<windows.h>
 	<GLUT/glut.h>
 	<GL/glut.h>
@@ -71,9 +71,9 @@
 	<stdio.h>
 	<math.h>
 	"header.h"
-	"functions.c"
+	"Robot.h"
 
-1522110431 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\header.h
+1523196420 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\header.h
 
 1522110564 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\functions.c
 	<windows.h>
@@ -144,4 +144,23 @@
 1522755191 c:\users\benjamin\documents\github\infographie_robot\robot animé\robot.h
 	<GL/gl.h>
 	<GL/glu.h>
+
+1523350698 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\robot.h
+	<GL/gl.h>
+	<GL/glu.h>
+
+1523350658 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\robot.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+	"Robot.h"
+
+1523196998 source:c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\camera.cpp
+	"Camera.h"
+	<math.h>
+
+1523197204 c:\users\toboggan\desktop\2nd année - esgi\introduction à l'infographie\projet\projet final - robot animé\infographie_robot\robot animé\camera.h
 

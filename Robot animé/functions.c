@@ -130,10 +130,6 @@ void arms(float epaule, float avant_bras, float coude, float xcoude, float ycoud
         glPopMatrix();
 
 
-
-
-
-
 	glPopMatrix();
 
 

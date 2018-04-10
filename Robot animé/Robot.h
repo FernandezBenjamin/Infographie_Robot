@@ -8,7 +8,7 @@
 
 class Robot{
     public:
-        Robot(float epaule, float avant_bras, float coude, float xcoude, float ycoude, float xpoigne, float ypoigne, float angle);
+        Robot(float epauleLeft, float epauleRight, float avant_bras, float coude, float xcoude, float ycoude, float xpoigne, float ypoigne, float angle, float xRotationLegLeft, float xRotationLegRight);
 
         void robotLeftLeg();
         void robotRightLeg();
@@ -20,8 +20,10 @@ class Robot{
 
 
 
-
-        float epaule;
+        float epauleLeft;
+        float epauleRight;
+        float xRotationLegLeft;
+        float xRotationLegRight;
         float avant_bras;
         float coude;
         float xcoude;

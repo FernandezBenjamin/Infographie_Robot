@@ -23,9 +23,13 @@ PROJET D'INFOGRAPHIE - ANIMATION D'UN ROBOT EN 3D
 #include "header.h"
 #include "Robot.h"
 #define PI 3.14159265
+//BRAS
+float epauleLeft = 35.0;
+float epauleRight = 35.0;
+//JAMBES
+float xRotationLegLeft = 0.0;
+float xRotationLegRight = 0.0;
 
-
-float epaule = 35.0;
 float avant_bras = 0.0;
 float coude = 0.0;
 float xcoude = 3.0;
@@ -34,7 +38,7 @@ float xpoigne = 6.2;
 float ypoigne = -2.0;
 float tete = 90;
 
-Robot *nier = new Robot(epaule,avant_bras,coude,xcoude,ycoude,xpoigne,ypoigne,tete);
+Robot *nier = new Robot(epauleLeft,epauleRight,avant_bras,coude,xcoude,ycoude,xpoigne,ypoigne,tete, xRotationLegLeft, xRotationLegRight);
 
 int main(int argc,  char **argv){
 
@@ -43,7 +47,7 @@ int main(int argc,  char **argv){
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(600, 600);
 	glutInitWindowPosition (100, 100);
-	glutCreateWindow("Le robot animé!");
+	glutCreateWindow("Pascal le robot");
 
 	//INITIALISATION D'OPENGL
 	initRendering();
@@ -356,25 +360,25 @@ void keyboard(unsigned char key, int x, int y) {
 
 
             case 'e':
-                if (epaule == 360.0){
+                /*if (epaule == 360.0){
                     epaule = 0.0;
                 } else {
                     epaule -= 30.0;
                 }
-                coude += 15.0;
+                coude += 15.0;*/
 				glutPostRedisplay();
 
 				break;
 
 
             case 'p':
-                if (epaule == 360.0){
+                /*if (epaule == 360.0){
                     epaule = 0.0;
                 } else {
                     epaule += 30.0;
                 }
                 coude -= 15.0;
-				glutPostRedisplay();
+				glutPostRedisplay();*/
 
 				break;
 
